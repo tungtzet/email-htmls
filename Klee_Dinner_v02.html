@@ -1,0 +1,859 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
+	xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="format-detection" content="telephone=no" />
+	<!--[if !mso]><!-- -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<!--<![endif]-->
+	<title> KLEE Design Dinner </title>
+	<style type="text/css">
+		/* Outlook link fix */
+		#outlook a {
+			padding: 0;
+		}
+
+		/* outlook.com background & line height fixes */
+		.ExternalClass {
+			width: 100% !important;
+			background-color: #ffffff;
+		}
+
+		.ExternalClass ecx* {
+			line-height: 100%;
+		}
+
+		.ExternalClass,
+		.ExternalClass p,
+		.ExternalClass span,
+		.ExternalClass font,
+		.ExternalClass td,
+		.ExternalClass div {
+			line-height: 100%;
+		}
+
+		/* Image borders & formatting */
+		img {
+			outline: none;
+			text-decoration: none;
+			-ms-interpolation-mode: bicubic;
+		}
+
+		a img {
+			border: none;
+		}
+
+		/* Re-style iPhone automatic links (eg. phone numbers) */
+		.applelinks a {
+			color: #222222;
+			text-decoration: none;
+		}
+
+		/* outlook.com symbol fix for mobile devices */
+		.ExternalClass img[class^=Emoji] {
+			width: 10px !important;
+			height: 10px !important;
+			display: inline !important;
+		}
+
+		img {
+			-ms-interpolation-mode: bicubic;
+		}
+
+		body,
+		p {
+			margin: 0;
+			padding: 0;
+			margin-bottom: 0;
+			-webkit-text-size-adjust: 100%;
+			-ms-text-size-adjust: 100%;
+		}
+
+		table td {
+			border-collapse: collapse;
+		}
+
+		.tablefixed {
+			table-layout: fixed;
+		}
+
+		.appleLink a {
+			color: #000000;
+			text-decoration: none;
+		}
+
+		@media screen and (max-width:600px) {
+
+			/* Height */
+			*[class].hauto {
+				height: auto !important;
+			}
+
+			*[class].h50 {
+				height: 50px !important;
+			}
+
+			*[class].h20px {
+				height: 20px !important;
+			}
+
+			*[class].h35px {
+				height: 35px !important;
+			}
+
+			/* Width */
+			*[class].wauto {
+				width: auto !important;
+			}
+
+			*[class].mw0px {
+				min-width: 0px !important;
+			}
+
+			*[class].w100pc {
+				width: 100% !important;
+			}
+
+			*[class].w50pc {
+				width: 50% !important;
+				height: auto !important;
+			}
+
+			*[class].imgMob {
+				width: 72px !important;
+				height: 32px !important;
+			}
+
+			/* Hide */
+			*[class].NoMob {
+				display: none !important;
+			}
+
+			/* Show */
+			*[class].show {
+				display: block !important;
+				width: 100% !important;
+				height: auto !important;
+				max-height: none !important;
+				line-height: 1.5 !important;
+			}
+
+			*[class].showtable {
+				display: table !important;
+				width: 100% !important;
+				height: auto !important;
+				max-height: none !important;
+				line-height: 1.5 !important;
+			}
+
+			*[class].mobshow {
+				display: block !important;
+				width: auto !important;
+				height: auto !important;
+				overflow: visible !important;
+				float: none !important;
+				visibility: visible !important;
+				border: none !important
+			}
+
+			*[class].showtd {
+				display: table-cell !important;
+				height: auto !important;
+				max-height: none !important;
+				line-height: 1.5 !important;
+			}
+
+			*[class].showimg {
+				display: block !important;
+				height: auto !important;
+				max-height: none !important;
+				line-height: 1.5 !important;
+			}
+
+			/*Paddings*/
+			*[class].padLR15 {
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+
+			*[class].padT50px {
+				padding-top: 50px;
+			}
+
+			*[class].imgCol {
+				width: 100%;
+				max-width: 320px;
+				margin: 0 auto;
+			}
+
+			*[class].imgSpeaker {
+				width: 100%;
+				max-width: 320px;
+				margin-right: auto;
+			}
+
+			*[class].logoHeaderL {
+				width: 104px;
+				height: auto;
+			}
+
+			*[class].logoHeaderR {
+				width: 175px;
+				height: auto;
+			}
+
+		}
+	</style>
+	<!--[if gte mso 10]><xml>
+<o:OfficeDocumentSettings>
+ <o:AllowPNG/>
+ <o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml><![endif]-->
+</head>
+
+<body
+	style="PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px; -webkit-text-size-adjust: none;"
+	bgcolor="#ffffff">
+
+	<table border="0" cellpadding="0" cellspacing="0"
+		style="mso-hide: all; display:none; font-size: 0; max-height: 0; line-height: 0;">
+		<tr>
+			<td style="mso-hide: all; display:none; font-size: 0; max-height: 0; line-height: 0; color:#ffffff;">
+				Klee Design Dinner - Kustomer Experience 2018
+			</td>
+		</tr>
+	</table>
+
+	<!--[if !mso]><!-->
+	<table width="100%" style="min-width:602px;" class="mw0px tablefixed" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td width="100%" style="min-width:602px;" align="center" class="mw0px" bgcolor="#ffffff">
+				<!--<![endif]-->
+
+				<!--Header Start-->
+				<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" style="width:100% !important;"
+					bgcolor="#f6f6f6">
+					<tr>
+						<td class="NoMob" style="font-size:1px; line-height:1px;">
+							<img src="https://res.cloudinary.com/tungtzet/image/upload/v1601725622/space_602_ikvkjt.png" width="602" height="1" border="0"
+								alt="" style="display:block; font-size:1px; line-height:1px;" class="NoMob" />
+						</td>
+					</tr>
+					<tr>
+						<td align="center">
+							<table border="0" cellpadding="0" cellspacing="0" align="center">
+								<tr>
+									<td height="10" style="height:10px; font-size:2px; line-height:2px;">&nbsp;</td>
+								</tr>
+							</table>
+							<table border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td height="10" style="height:10px; font-size:2px; line-height:2px;">&nbsp;</td>
+								</tr>
+							</table>
+							<table border="0" cellpadding="0" cellspacing="0" width="104" align="center" class="padLR15">
+								<tr>
+									<td style="font-family:Arial; font-size: 19px; line-height:25px; color:#c3c3c3;text-align:center;"
+										align="center">
+										<a href="http://remcuaklee.com/" target="_blank" title="Klee Logo Header">
+											<img src="https://res.cloudinary.com/tungtzet/image/upload/v1601745810/klee-logo-center_g9004i.png" width="104"
+												height="36" border="0" alt="Klee logo" align="center" style="display:block;" />
+										</a>
+									</td>
+								</tr>
+							</table>
+							<table border="0" cellpadding="0" cellspacing="0" align="center">
+								<tr>
+									<td height="10" style="height:10px; font-size:2px; line-height:2px;">&nbsp;</td>
+								</tr>
+							</table>
+							<table border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td height="10" style="height:10px; font-size:2px; line-height:2px;">&nbsp;</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				<!--Header End-->
+
+				<!--Hero Start-->
+				<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" style="width:100% !important;"
+					bgcolor="#000000">
+					<tr>
+						<td class="NoMob" style="font-size:1px; line-height:1px;">
+							<img src="https://res.cloudinary.com/tungtzet/image/upload/v1601725622/space_602_ikvkjt.png" width="602" height="1" border="0"
+								alt="" style="display:block; font-size:1px; line-height:1px;" class="NoMob" />
+						</td>
+					</tr>
+					<tr>
+						<td align="center">
+							<table border="0" cellpadding="0" cellspacing="0" align="center">
+								<tr>
+									<td height="10" style="height:10px; font-size:2px; line-height:2px;">&nbsp;</td>
+								</tr>
+							</table>
+							<table border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<td height="10" style="height:10px; font-size:2px; line-height:2px;">&nbsp;</td>
+								</tr>
+							</table>
+
+							<table border="0" cellpadding="0" cellspacing="0" width="602" align="center" class="w100pc padLR15">
+								<tr>
+									<td class="NoMob" style="font-size:1px; line-height:1px;">
+										<img src="https://res.cloudinary.com/tungtzet/image/upload/v1601725622/space_602_ikvkjt.png" width="602" height="1"
+											border="0" alt="" style="display:block; font-size:1px; line-height:1px;" class="NoMob" />
+									</td>
+								</tr>
+								<tr>
+									<td height="55" style="height:55px; font-size:2px; line-height:2px;" class="h35px">&nbsp;</td>
+								</tr>
+								<tr>
+									<td
+										style="font-family:Arial; font-size: 36px; line-height:42px; color:#ffffff;text-align:center; font-weight: bold;">
+										Your Design Dinner at Klee
+									</td>
+								</tr>
+								<tr>
+									<td height="10" style="height:10px; font-size:2px; line-height:2px;">&nbsp;</td>
+								</tr>
+								<tr>
+									<td style="font-family:Arial; font-size: 18px; line-height:25px; color:#c3c3c3;text-align:center;">
+										9th October 2018, 7.30pm<br>
+										Klee Home Decor, Hanoi
+									</td>
+								</tr>
+							</table>
+							<table border="0" cellpadding="0" cellspacing="0" align="center" class="w100pc padLR15">
+								<tr>
+									<td height="50" style="height:50px; font-size:2px; line-height:2px;">&nbsp;</td>
+								</tr>
+								<tr>
+									<td>
+										<img src="https://res.cloudinary.com/tungtzet/image/upload/v1601716130/header-top_r2xmjr.jpg" width="602"
+											border="0" alt="" style="display:block;" class="w100pc hauto">
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				<!--Hero End-->
+
+
+
+				<!--Start Headline TextBlock-->
+				<table border="0" cellpadding="0" cellspacing="0" width="602" align="center" class="w100pc padLR15">
+					<tr>
+						<td>
+							<img src="https://res.cloudinary.com/tungtzet/image/upload/v1601716129/header-bottom_vajoqw.jpg" width="602"
+								border="0" alt="" style="display:block;" class="w100pc hauto">
+						</td>
+					</tr>
+					<tr>
+						<td class="NoMob" style="font-size:1px; line-height:1px;">
+							<img src="https://res.cloudinary.com/tungtzet/image/upload/v1601725622/space_602_ikvkjt.png" width="602" height="1" border="0"
+								alt="" style="display:block; font-size:1px; line-height:1px;" class="NoMob" />
+						</td>
+					</tr>
+				</table>
+				<table border="0" cellpadding="0" cellspacing="0" width="602" align="center" class="w100pc padLR15">
+					<tr>
+						<td class="NoMob" style="font-size:1px; line-height:1px;">
+							<img src="https://res.cloudinary.com/tungtzet/image/upload/v1601725622/space_602_ikvkjt.png" width="602" height="1" border="0"
+								alt="" style="display:block; font-size:1px; line-height:1px;" class="NoMob" />
+						</td>
+					</tr>
+					<tr>
+						<td height="45" style="height:45px; font-size:2px; line-height:2px;">&nbsp;</td>
+					</tr>
+
+					<tr>
+						<td
+							style="font-family:Arial; font-size: 28px; line-height:34px; color: #9A8643;text-align:center; font-weight: bold;">
+							&twoheadrightarrow;
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="font-family:Arial; font-size: 28px; line-height:34px; color: #9A8643;text-align:center; font-weight: bold;">
+							Your Invitation to our Klee Design Dinner and discover Dinner Furniture & Decor Kollection 2018
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="font-family:Arial; font-size: 28px; line-height:34px; color: #9A8643;text-align:center; font-weight: bold;">
+							&twoheadleftarrow;
+						</td>
+					</tr>
+				</table>
+				<!--End Headline TextBlock-->
+
+				<!--Start THANK YOU Section 2Cols-->
+				<table border="0" cellpadding="0" cellspacing="0" width="602" align="center" class="w100pc padLR15">
+					<tr>
+						<td height="50" style="height:50px; font-size:2px; line-height:2px;">&nbsp;</td>
+					</tr>
+				</table>
+				<table border="0" cellpadding="0" cellspacing="0" width="602" align="center" class="w100pc padLR15">
+					<tr>
+						<td valign="top">
+							<table border="0" cellpadding="0" cellspacing="0" width="280" align="left" class="w100pc">
+								
+								<tr>
+									<td
+										style="font-family:Arial; font-size: 16px; line-height:22px; color:#000000;text-align:right; font-weight: bold;">
+										Thank you for being a wonderful customer & partner of Klee!
+									</td>
+								</tr>
+								<tr>
+									<td height="10" style="height:10px; font-size:2px; line-height:2px;">&nbsp;</td>
+								</tr>
+								<tr>
+									<td style="font-family:Arial; font-size: 16px; line-height:22px; color:#737373;text-align:right; ">
+										As a special offer to our customers from the North region, we want to invite you to our Design Dinner 2018.
+									</td>
+								</tr>
+							</table>
+							<!--[if gte mso 9]>
+</td>
+<td valign="top">
+<![endif]-->
+							<table border="0" cellpadding="0" cellspacing="0" width="40" align="left" class="NoMob">
+								<tr>
+									<td height="1" width="40"
+										style="height:1px; font-size:2px; line-height:2px;max-width:40px; width:40px;">&nbsp;</td>
+								</tr>
+							</table>
+							<!--[if gte mso 9]>
+</td>
+<td valign="top">
+<![endif]-->
+							<table border="0" cellpadding="0" cellspacing="0" width="280" align="right" class="w100pc padT50px">
+								<tr>
+									<td>
+										<img src="https://res.cloudinary.com/tungtzet/image/upload/v1601725538/Klee-dinner-autumn_xov4gs.jpg" width="280"
+											border="0" alt="" style="display:block;" class="imgCol" />
+									</td>
+								</tr>
+								<tr>
+									<td height="20" style="height:20px; font-size:2px; line-height:2px;">&nbsp;</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				<!--End THANK YOU Section 2Cols-->
+
+				<!--Start 2Cols-->
+				<table border="0" cellpadding="0" cellspacing="0" width="602" align="center" class="w100pc padLR15">
+					<tr>
+						<td height="50" style="height:50px; font-size:2px; line-height:2px;">&nbsp;</td>
+					</tr>
+				</table>
+				<table border="0" cellpadding="0" cellspacing="0" width="602" align="center" class="w100pc padLR15">
+					<tr>
+						<td valign="top">
+							<table border="0" cellpadding="0" cellspacing="0" width="280" align="left" class="w100pc">
+								<tr>
+									<td>
+										<img src="https://res.cloudinary.com/tungtzet/image/upload/v1601720143/Klee_set_1_v8jivz.jpg" width="280"
+											border="0" alt="" style="display:block;" class="imgCol" />
+									</td>
+								</tr>
+								<tr>
+									<td height="20" style="height:20px; font-size:2px; line-height:2px;">&nbsp;</td>
+								</tr>
+								
+							</table>
+							<!--[if gte mso 9]>
+</td>
+<td valign="top">
+<![endif]-->
+							<table border="0" cellpadding="0" cellspacing="0" width="40" align="left" class="NoMob">
+								<tr>
+									<td height="1" width="40"
+										style="height:1px; font-size:2px; line-height:2px;max-width:40px; width:40px;">&nbsp;</td>
+								</tr>
+							</table>
+							<!--[if gte mso 9]>
+</td>
+<td valign="top">
+<![endif]-->
+							<table border="0" cellpadding="0" cellspacing="0" width="280" align="right" class="w100pc padT50px">
+								<tr>
+									<td style="font-family:Arial; font-size: 16px; line-height:22px; color:#737373;text-align:left; ">
+										Enjoy this unique opportunity to warm up for our most comprehensive Kustomer Experience event of the year.
+							There is no set agenda and no presentations. Just old-fashioned human to human communication plus
+							excellent Vietnamese food, refreshing drinks and breathtakingly beautiful Autumn Kollection of furniture and decor.
+							This event is by invitation only for customers and selected sponsoring partners from our North region.
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				<!--End 2Cols-->
+
+				<!--Start Seperator-->
+				<table border="0" cellpadding="0" cellspacing="0" width="602" align="center" class="w100pc padLR15">
+					<tr>
+						<td class="NoMob" style="font-size:1px; line-height:1px;">
+							<img src="https://res.cloudinary.com/tungtzet/image/upload/v1601725622/space_602_ikvkjt.png" width="602" height="1" border="0"
+								alt="" style="display:block; font-size:1px; line-height:1px;" class="NoMob" />
+						</td>
+					</tr>
+					<tr>
+						<td height="50" style="height:50px; font-size:2px; line-height:2px; border-bottom: 2px solid #000000"
+							class="h50">&nbsp;</td>
+					</tr>
+				</table>
+				<!--End Seperator-->
+
+
+
+
+
+				<!--Start DATE & LOCATION 2Cols-->
+				<table border="0" cellpadding="0" cellspacing="0" width="602" align="center" class="w100pc padLR15">
+					<tr>
+						<td height="50" style="height:50px; font-size:2px; line-height:2px;">&nbsp;</td>
+					</tr>
+				</table>
+				<table border="0" cellpadding="0" cellspacing="0" width="602" align="center" class="w100pc padLR15">
+					<tr>
+						<td valign="top">
+							<table border="0" cellpadding="0" cellspacing="0" width="280" align="left" class="w100pc">
+								<tr>
+									<td>
+										<img src="https://res.cloudinary.com/tungtzet/image/upload/v1601718822/calendar-icon_unsoc7.png" width="280"
+											border="0" alt="" style="display:block;" class="imgCol" />
+									</td>
+								</tr>
+								<tr>
+									<td height="20" style="height:20px; font-size:2px; line-height:2px;">&nbsp;</td>
+								</tr>
+								<tr>
+									<td
+										style="font-family:Arial; font-size: 16px; line-height:22px; color:#000000;text-align:center; font-weight: bold;">
+										Save the Date
+									</td>
+								</tr>
+								<tr>
+									<td height="10" style="height:10px; font-size:2px; line-height:2px;">&nbsp;</td>
+								</tr>
+								<tr>
+									<td style="font-family:Arial; font-size: 16px; line-height:22px; color:#737373;text-align:center; ">
+										9th October 2018, <br>7.30pm
+									</td>
+								</tr>
+							</table>
+							<!--[if gte mso 9]>
+</td>
+<td valign="top">
+<![endif]-->
+							<table border="0" cellpadding="0" cellspacing="0" width="40" align="left" class="NoMob">
+								<tr>
+									<td height="1" width="40"
+										style="height:1px; font-size:2px; line-height:2px;max-width:40px; width:40px;">&nbsp;</td>
+								</tr>
+							</table>
+							<!--[if gte mso 9]>
+</td>
+<td valign="top">
+<![endif]-->
+							<table border="0" cellpadding="0" cellspacing="0" width="280" align="right" class="w100pc padT50px">
+								<tr>
+									<td>
+										<img src="https://res.cloudinary.com/tungtzet/image/upload/v1601719287/location-icon_onnmyi.png" width="280"
+											border="0" alt="" style="display:block;" class="imgCol" />
+									</td>
+								</tr>
+								<tr>
+									<td height="20" style="height:20px; font-size:2px; line-height:2px;">&nbsp;</td>
+								</tr>
+								<tr>
+									<td
+										style="font-family:Arial; font-size: 16px; line-height:22px; color:#000000;text-align:center; font-weight: bold;">
+										Pin the Location
+									</td>
+								</tr>
+								<tr>
+									<td height="10" style="height:10px; font-size:2px; line-height:2px;">&nbsp;</td>
+								</tr>
+								<tr>
+									<td style="font-family:Arial; font-size: 16px; line-height:22px; color:#737373;text-align:center; ">
+										Klee Home Decor, 11 Ngo Thi Nham, Ngo Tuoi Tre,
+										Hanoi, Vietnam
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				<!--End DATE & LOCATION 2Cols-->
+
+
+
+
+
+				<!--Start Seperator-->
+				<table border="0" cellpadding="0" cellspacing="0" width="602" align="center" class="w100pc padLR15">
+					<tr>
+						<td class="NoMob" style="font-size:1px; line-height:1px;">
+							<img src="https://res.cloudinary.com/tungtzet/image/upload/v1601725622/space_602_ikvkjt.png" width="602" height="1" border="0"
+								alt="" style="display:block; font-size:1px; line-height:1px;" class="NoMob" />
+						</td>
+					</tr>
+					<tr>
+						<td height="50" style="height:50px; font-size:2px; line-height:2px; border-bottom: 2px solid #000000"
+							class="h50">&nbsp;</td>
+					</tr>
+				</table>
+				<!--End Seperator-->
+
+				<!--Start TextCtaBlock-->
+				<table border="0" cellpadding="0" cellspacing="0" width="602" align="center" class="w100pc padLR15">
+					<tr>
+						<td class="NoMob" style="font-size:1px; line-height:1px;">
+							<img src="https://res.cloudinary.com/tungtzet/image/upload/v1601725622/space_602_ikvkjt.png" width="602" height="1" border="0"
+								alt="" style="display:block; font-size:1px; line-height:1px;" class="NoMob" />
+						</td>
+					</tr>
+					<tr>
+						<td height="50" style="height:50px; font-size:2px; line-height:2px;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td style="font-family:Arial; font-size: 16px; line-height:23px; color:#737373;text-align:center;">
+							Click <a href="#" target="_blank"
+								style="font-weight:bold; color:#9A8643; text-decoration: none;">here</a> for further Information.
+						</td>
+					</tr>
+					<tr>
+						<td height="10" style="height:10px; font-size:2px; line-height:2px;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td style="font-family:Arial; font-size: 16px; line-height:23px; color:#737373;text-align:center;">
+							You want to participate in our Design Dinner?
+						</td>
+					</tr>
+					<tr>
+						<td height="30" style="height:30px; font-size:2px; line-height:2px;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td align="center">
+							<table border="0" cellpadding="0" cellspacing="0" align="center" class="padLR15">
+								<tr>
+									<td valign="top" bgcolor="#E01B22" height="48" style="border-radius:8px;">
+										<table border="0" cellpadding="0" cellspacing="0" align="left">
+											<tr>
+												<td height="12" style="height:12px; font-size:2px; line-height:2px;">&nbsp;</td>
+											</tr>
+											<tr>
+												<td width="180"
+													style="font-family:Arial; font-size: 19px; line-height:22px; color:#ffffff;text-align:center;">
+													<a href="#"
+														target="_blank"
+														style="font-family:Arial; font-size: 19px; line-height:24px; color:#ffffff;text-align:center; text-decoration:none;"
+														title="Register now">
+														Confirm now &bigstar;
+													</a>
+												</td>
+											</tr>
+											<tr>
+												<td height="12" style="height:12px; font-size:2px; line-height:2px;">&nbsp;</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+
+				</table>
+				<!--End TextCtaBlock-->
+
+
+				<!--Start Seperator-->
+				<table border="0" cellpadding="0" cellspacing="0" width="602" align="center" class="w100pc padLR15">
+					<tr>
+						<td class="NoMob" style="font-size:1px; line-height:1px;">
+							<img src="https://res.cloudinary.com/tungtzet/image/upload/v1601725622/space_602_ikvkjt.png" width="602" height="1" border="0"
+								alt="" style="display:block; font-size:1px; line-height:1px;" class="NoMob" />
+						</td>
+					</tr>
+					<tr>
+						<td height="50" style="height:50px; font-size:2px; line-height:2px; border-bottom: 2px solid #000000"
+							class="h50">&nbsp;</td>
+					</tr>
+				</table>
+				<!--End Seperator-->
+
+
+				<!--Start PARTNERS Block-->
+				<table border="0" cellpadding="0" cellspacing="0" width="602" align="center" class="w100pc padLR15">
+					<tr>
+						<td class="NoMob" style="font-size:1px; line-height:1px;">
+							<img src="https://res.cloudinary.com/tungtzet/image/upload/v1601725622/space_602_ikvkjt.png" width="602" height="1" border="0"
+								alt="" style="display:block; font-size:1px; line-height:1px;" class="NoMob" />
+						</td>
+					</tr>
+					<tr>
+						<td height="50" style="height:50px; font-size:2px; line-height:2px;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td
+							style="font-family:Arial; font-size: 28px; line-height:34px; color:#9A8643;text-align:center; font-weight: bold;">
+							Selected Partners
+						</td>
+					</tr>
+					<tr>
+						<td height="30" style="height:30px; font-size:2px; line-height:2px;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td valign="center">
+							<img src="https://res.cloudinary.com/tungtzet/image/upload/v1601723220/klee-partners_puc3zm.png" width="602" border="0"
+								alt="" style="display:block;" class="w100pc" />
+						</td>
+					</tr>
+				</table>
+				<!--End PARTNERS Block-->
+
+
+
+
+				<!--Start Seperator-->
+				<table border="0" cellpadding="0" cellspacing="0" width="602" align="center" class="w100pc padLR15">
+					<tr>
+						<td class="NoMob" style="font-size:1px; line-height:1px;">
+							<img src="https://res.cloudinary.com/tungtzet/image/upload/v1601725622/space_602_ikvkjt.png" width="602" height="1" border="0"
+								alt="" style="display:block; font-size:1px; line-height:1px;" class="NoMob" />
+						</td>
+					</tr>
+					<tr>
+						<td height="50" style="height:50px; font-size:2px; line-height:2px; border-bottom: 2px solid #000000"
+							class="h50">&nbsp;</td>
+					</tr>
+				</table>
+				<!--End Seperator-->
+
+
+				<!--Start CTA Block-->
+				<table border="0" cellpadding="0" cellspacing="0" width="602" align="center" class="w100pc padLR15">
+					<tr>
+						<td class="NoMob" style="font-size:1px; line-height:1px;">
+							<img src="https://res.cloudinary.com/tungtzet/image/upload/v1601725622/space_602_ikvkjt.png" width="602" height="1" border="0"
+								alt="" style="display:block; font-size:1px; line-height:1px;" class="NoMob" />
+						</td>
+					</tr>
+					<tr>
+						<td height="50" style="height:50px; font-size:2px; line-height:2px;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td
+							style="font-family:Arial; font-size: 28px; line-height:34px; color:#9A8643;text-align:center; font-weight: bold;">
+							We are looking forward to meeting you and sounding the bell for Klee Design Dinner Autumn 2018.
+						</td>
+					</tr>
+
+					<tr>
+						<td height="30" style="height:30px; font-size:2px; line-height:2px;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td style="font-family:Arial; font-size: 16px; line-height:23px; color:#737373;text-align:center;">
+							Kind regards,
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="font-family:Arial; font-size: 16px; line-height:23px; color:#737373;text-align:center; font-weight:bold;">
+							Klee Kustomer Experience Team
+						</td>
+					</tr>
+				</table>
+				<!--End CTA Block-->
+
+
+
+				<!--Start Footer-->
+				<table border="0" cellpadding="0" cellspacing="0" width="602" align="center" class="w100pc padLR15">
+					<tr>
+						<td height="65" style="height:65px; font-size:2px; line-height:2px;">&nbsp;</td>
+					</tr>
+				</table>
+
+				<table border="0" cellpadding="0" cellspacing="0" width="100%" style="width:100% !important;" bgcolor="#f6f6f6"
+					class="w100pc">
+					<tr>
+						<td align="center">
+							<table border="0" cellpadding="0" cellspacing="0" width="602" align="center" class="w100pc ">
+								<tr>
+									<td class="NoMob" style="font-size:1px; line-height:1px;">
+										<img src="https://res.cloudinary.com/tungtzet/image/upload/v1601725622/space_602_ikvkjt.png" width="602" height="1"
+											border="0" alt="" style="display:block; font-size:1px; line-height:1px;" class="NoMob" />
+									</td>
+								</tr>
+								<tr>
+									<td height="40" style="height:40px; font-size:2px; line-height:2px;">&nbsp;</td>
+								</tr>
+								<tr>
+									<td>
+										<table border="0" cellpadding="0" cellspacing="0" align="center" class="">
+											<tr>
+												<td width="48">
+													<a href="https://www.facebook.com/Klee.Homedecor/" target="_blank" title="Facebook"><img
+															src="https://res.cloudinary.com/tungtzet/image/upload/v1601725049/klee-logo-fb_ingprl.png" width="48" height="48"
+															border="0" alt="facebook" style="display:block;" /></a>
+												</td>
+											</tr>
+											<tr>
+												<td height="20" style="height:20px; font-size:2px; line-height:2px;">&nbsp;</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+							<table border="0" cellpadding="0" cellspacing="0" width="602" align="center" class="w100pc">
+								
+								<tr>
+									<td style="font-family:Arial; font-size: 14px; line-height:20px; color:#000000;text-align:center;">
+										<span>KLEE Home Decor, 11 Ngo Thi Nham, Ngo Tuoi Tre, Hanoi, Vietnam</span>
+									</td>
+								</tr>
+								<tr>
+									<td style="font-family:Arial; font-size: 14px; line-height:20px; color:#000000;text-align:center;">
+										<a href="http://www.klee.vn" target="_blank"
+											style="font-family:Arial; font-size: 14px; line-height:20px; color:#000000;text-align:center; text-decoration: underline;"
+											title="www.klee.vn">www.klee.vn</a> &nbsp;&#124;&nbsp;
+										<a href="https://remcuaklee.com/" target="_blank"
+											style="font-family:Arial; font-size: 14px; line-height:20px; color:#000000;text-align:center; text-decoration: underline;"
+											title="www.remcuaklee.com/">remcuaklee.com</a>&nbsp;&#124;&nbsp;
+										<a href="https://www.facebook.com/Nh%C3%A0-m%C3%A1y-R%C3%A8m-H%C3%A0-N%E1%BB%99i-BCworks-2122803991168918/" target="_blank"
+											style="font-family:Arial; font-size: 14px; line-height:20px; color:#000000;text-align:center; text-decoration: underline;"
+											title="BC.works">BC.works</a>
+									</td>
+								</tr>
+
+								<tr>
+									<td height="40" style="height:40px; font-size:2px; line-height:2px;">&nbsp;</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				<!--End Footer-->
+
+				<!--[if !mso]><!-->
+			</td>
+		</tr>
+	</table>
+	<!--<![endif]-->
+</body>
+
+</html>
