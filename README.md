@@ -1,5 +1,5 @@
 # Some selected email-htmls templates
-These are demo templates for some clients in Vietnam. Please note that they are not the final versions selected by clients, who approved these templates to be featured here just for demonstration.
+These are demo templates for some clients in Vietnam. Please note that they are not the final versions selected by clients, who approved these templates with necessary modifications to be featured here just for demonstration.
 
 ### [Klee_Dinner_v02.html](https://github.com/tungtzet/email-htmls/blob/master/Klee_Dinner_v02.html)
 An invitation template for a campaign event of a HomeDecor/Furniture store
